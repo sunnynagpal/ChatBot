@@ -58,9 +58,33 @@ namespace SelfIntroductoryBot
                     case "intent_capabilities":
                         reply = "Currently, I can answer questions about myself but I am being trained to answer more questions.";
                         break;
-                       
+
                     case "intent_bye":
                         reply = "So soon :(, I was enjoying the discussion!";
+                        break;
+
+                    case "intent_team_location":
+                        reply = "Sunny worked from Mumbai while Akshay has worked from Bangalore";
+                        break;
+
+                    case "intent_happy":
+                        reply = "You look happy";
+                        break;
+
+                    case "intent_unhappy":
+                        reply = "You look sad, what happened?";
+                        break;
+
+                    case "intent.agree":
+                        reply = "Glad, we are on same page!";
+                        break;
+
+                    case "intent.whatisyourname":
+                        reply = "My name is Ponchu!";
+                        break;
+
+                    case "intent_future":
+                        reply = "I will like to be able to answer about more scenarios in future";
                         break;
 
                     default:
@@ -114,7 +138,7 @@ namespace SelfIntroductoryBot
         private string createRequest(string queryString)
         {
             queryString = WebUtility.UrlEncode(queryString);
-            string UrlRequest = "https://api.projectoxford.ai/luis/v1/application?id=347f5254-c18b-4252-8ef6-169740788605&subscription-key=0cabcb280003496a9b9c16f678d7dae6&q="+queryString ;            
+            string UrlRequest = "https://api.projectoxford.ai/luis/v1/application?id=347f5254-c18b-4252-8ef6-169740788605&subscription-key=0cabcb280003496a9b9c16f678d7dae6&q=" + queryString;
             Console.WriteLine(UrlRequest);
             return (UrlRequest);
         }
